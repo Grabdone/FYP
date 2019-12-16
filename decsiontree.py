@@ -20,12 +20,13 @@ y = bankdata2['Gender']
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
+from sklearn import tree
+clf =tree.DecisionTreeClassifier()
 
-svclassifier = SVC(kernel='linear')
-svclassifier.fit(X_train, y_train)
+clf.fit(X_train, y_train)
 
 
-y_pred = svclassifier.predict(X_test)
+y_pred = clf.predict(X_test)
 
 from sklearn.metrics import accuracy_score
 print(confusion_matrix(y_test,y_pred))

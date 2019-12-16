@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 28 21:56:53 2019
+Created on Sat Dec  7 13:51:48 2019
 
 @author: Saad
 """
+
 
 import pandas as pd
 import numpy as np
@@ -14,8 +15,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 
 bankdata2 = pd.read_csv("databank.csv")
-bankdata2.shape
-X = bankdata2.drop('Gender', axis=1)
+X = bankdata2[['mfcc_13','mfcc_12','mfcc_10','spectral_flux']]
 y = bankdata2['Gender']
 
 
@@ -27,9 +27,10 @@ svclassifier.fit(X_train, y_train)
 
 y_pred = svclassifier.predict(X_test)
 
+
 from sklearn.metrics import accuracy_score
 print(confusion_matrix(y_test,y_pred))
 print(classification_report(y_test,y_pred))
-print("accuracy:",accuracy_score(y_test,y_pred,normalize=True))
+print("Accuracy:",accuracy_score(y_test,y_pred,normalize=True))
 
 

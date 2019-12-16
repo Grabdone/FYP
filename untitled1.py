@@ -4,7 +4,6 @@ Created on Fri Nov  1 21:02:22 2019
 
 @author: Saad
 """
-
 from pyAudioAnalysis import audioBasicIO
 from pyAudioAnalysis import audioFeatureExtraction
 from sklearn import svm
@@ -53,9 +52,3 @@ K, f_names = audioFeatureExtraction.stFeatureExtraction(x2, Fs2, 0.050*Fs, 0.025
 #plt.subplot(2,2,1); plt.plot(K[21,:]); plt.xlabel('Frame no'); plt.ylabel(f_names[21]);
 #plt.subplot(2,2,2); plt.plot(K[22,:]); plt.xlabel('Frame no'); plt.ylabel(f_names[22]); plt.show()
 plt.subplot(1,1,1); plt.plot(K[7,:]); plt.xlabel('Frame no'); plt.ylabel(f_names[7]); plt.show()
-
-#python audioAnalysis.py  featureExtractionDir -i data/ -mw 1.0 -ms 1.0 -sw 0.050 -ss 0.050
-
-
-
-
